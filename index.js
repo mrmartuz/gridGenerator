@@ -5,7 +5,7 @@ var gridTotalCells = gridLength * gridLength;
 $("section").prepend("<div></div>").addClass("grid-container");
 
 //DEFINE DIMENSION
-var gridCellWidth = Math.floor(700/gridLength);
+var gridCellWidth = Math.floor( 700 / gridLength );
 var gridWidth = gridLength * gridCellWidth;
 
 //SET DIMENSION
@@ -21,8 +21,8 @@ for (let i=0; i<gridTotalCells; i++){
     var cell = new cellObj(i, i, i);
 }
 
-$(".grid-items").width(gridCellWidth);
-$(".grid-items").height(gridCellWidth);
+$(".grid-item").width(gridCellWidth);
+$(".grid-item").height(gridCellWidth);
 
 $("section div:last-child").remove();
 
@@ -34,7 +34,7 @@ function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     $(".grid-container").append("<div></div>");
     $("div").eq(this.cellId).addClass("grid-item");
 
-    if (this.testint> 20) {
+    if (this.testInt> 20) {
         $(".grid-item").eq(this.cellId).css("opacity", 100);
     } else {
         $(".grid-item").eq(this.cellId).css("opacity", 0);
