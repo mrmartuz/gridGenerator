@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: #221f1f;
+}
+
+ul {
+    height: 50px;
+    background-color: #fae7c9;
+    font-family: fantasy;
+    color: #b0926a;
+    border-radius: 4px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.grid-container {
+    padding: 20px;
+    align-self: center;
+    display: grid;
+    background-color: #fae7c9;
+}
+
+.grid-item {
+    width: 64px;
+    height: 64px;
+    background-color: #e1c78f;
+    font-size: xx-small;
+}
