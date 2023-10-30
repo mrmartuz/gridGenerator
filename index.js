@@ -14,7 +14,7 @@ $(".grid-container").height(gridWidth);
 
 //
 const gridTemplateColumns = 'repeat' + '(' + gridLength + ', ' + gridCellWidth + 'px)';
-$(".grid-container").css("grid-template-columns", gridTemplateColums);
+$(".grid-container").css("grid-template-columns", gridTemplateColumns);
 $(".grid-container").css("grid-template-rows", gridTemplateColumns);
 
 for (let i=0; i<gridTotalCells; i++){
@@ -28,8 +28,8 @@ $("section div:last-child").remove();
 
 function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     this.cellId = cellIdValue;
-    this.cellPosX =((cellPosXValue % gridlength) + 1);
-    this.cellPosY = (Math.floor(( cellPosYValue / gridlength)+1));
+    this.cellPosX =((cellPosXValue % gridLength) + 1);
+    this.cellPosY = (Math.floor(( cellPosYValue / gridLength)+1));
     this.testInt = Math.floor( Math.random() * 100);
     $(".grid-container").append("<div></div>");
     $("div").eq(this.cellId).addClass("grid-item");
