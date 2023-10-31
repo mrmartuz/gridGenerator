@@ -34,3 +34,11 @@ ul {
     background-color: #e1c78f;
     font-size: xx-small;
 }
+
+.grid-item :hover {
+    background-color: #ff9100;
+}
+
+.grid-item-active {
+    background-color: #b0926a;
+}

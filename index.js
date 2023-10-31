@@ -12,11 +12,13 @@ var gridWidth = gridLength * gridCellWidth;
 $(".grid-container").width(gridWidth);
 $(".grid-container").height(gridWidth);
 
-//
+//GRID TEMPLATE
 const gridTemplateColumns = 'repeat' + '(' + gridLength + ', ' + gridCellWidth + 'px)';
 $(".grid-container").css("grid-template-columns", gridTemplateColumns);
 $(".grid-container").css("grid-template-rows", gridTemplateColumns);
 
+
+//FORLOOP CREATING GRID
 for (let i=0; i<gridTotalCells; i++){
     var cell = new cellObj(i, i, i);
 }
@@ -26,6 +28,13 @@ $(".grid-item").height(gridCellWidth);
 
 $("section div:last-child").remove();
 
+//EVENT LISTENER
+$(".grid-item").on("click", function() {
+    $(this).toggleClass("grid-item-active");
+});
+
+
+//CELL OBJECT
 function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     this.cellId = cellIdValue;
     this.cellPosX =((cellPosXValue % gridLength) + 1);
@@ -39,4 +48,6 @@ function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     } else {
         $(".grid-item").eq(this.cellId).css("opacity", 0);
     }
+
+
 }
