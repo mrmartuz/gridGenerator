@@ -15,7 +15,7 @@
 //INFINITE LEVEL
 
 
-prompt("Press all the squares tò complete the grid and Advance to the next level");
+alert("Press all the squares tò complete the grid and Advance to the next level");
 var timerValue = 0;
 var gridLength = 2;
 var gridTotalCells = gridLength * gridLength;
