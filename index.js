@@ -13,7 +13,8 @@
 //play arrayPlay
 //ADD NEW CELLS - NEW LEVEL
 //INFINITE LEVEL
- 
+
+var timerValue = 0;
 var gridLength = 2;
 var gridTotalCells = gridLength * gridLength;
 var windowWidth = ($(window).width()/2);
@@ -93,6 +94,17 @@ function updateScore() {
             for (let i=0; i<gridTotalCells; i++){
                 cell.push( new cellObj(i, i, i));
             }
+
+            $(".grid-item").width(gridCellWidth);
+            $(".grid-item").height(gridCellWidth);
+
+        
+            //EVENT LISTENER
+            $(".grid-item").on("click", function() {
+                $(this).toggleClass("grid-item-active");
+                timerValue += 10;
+            });
+
         },50);
     }
 }
@@ -127,5 +139,5 @@ function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     }
  
     //INTERVALLO UPDATE TESTINT
-    setInterval(function(){ self.updateTestInt();}, ((Math.random()*600)+200));
-             }
+    setInterval(function(){ self.updateTestInt();}, ((Math.random()*600)+600+timerValue));
+}
