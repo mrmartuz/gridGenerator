@@ -13,16 +13,22 @@
 //play arrayPlay
 //ADD NEW CELLS - NEW LEVEL
 //INFINITE LEVEL
-
-var gridLength = prompt("Welcome to the grid genarator, please insert a grid length. (max 50 cells!)");
+ 
+var gridLength = 2;
 var gridTotalCells = gridLength * gridLength;
+var windowWidth = ($(window).width()/2);
+console.log("window width " + windowWidth);
  
 //CREATE SECTION
 $("section").prepend("<div></div>").addClass("grid-container");
  
 //DEFINE DIMENSION
-var gridCellWidth = Math.floor( 700 / gridLength );
+//needs change
+//check if bigger heigth or width window
+var gridCellWidth = Math.floor( windowWidth / gridLength );
+console.log("cell width " + gridCellWidth);
 var gridWidth = gridLength * gridCellWidth;
+console.log("grid-container width " + gridWidth);
  
 //SET DIMENSION
 $(".grid-container").width(gridWidth);
@@ -50,7 +56,7 @@ $(".grid-item").on("click", function() {
 });
  
 //INTERVALLO UPDATE TESTINT
-setInterval(function(){updateScore()}, (Math.random()*300));
+setInterval(function(){updateScore()}, 500);
  
  
 //UPDATE SCORE
@@ -62,7 +68,32 @@ function updateScore() {
         }
     });
     if (scoreValue === gridTotalCells) {
-        alert("YOU HAVE WON!");
+        $(".grid-container").empty();
+        setTimeout(function(){
+            alert("YOU HAVE WON!");
+            gridLength +=1;
+            gridTotalCells = gridLength * gridLength;
+            console.log(gridTotalCells);
+            gridCellWidth = Math.floor( windowWidth / gridLength );
+            console.log("cell width " + gridCellWidth);
+            gridWidth = gridLength * gridCellWidth;
+            console.log("grid-container width " + gridWidth);
+ 
+            //SET DIMENSION
+            $(".grid-container").width(gridWidth);
+            $(".grid-container").height(gridWidth);
+ 
+            //GRID TEMPLATE
+            const gridTemplateColumns = 'repeat' + '(' + gridLength + ', ' + gridCellWidth + 'px)';
+            $(".grid-container").css("grid-template-columns", gridTemplateColumns);
+            $(".grid-container").css("grid-template-rows", gridTemplateColumns);
+ 
+            //FORLOOP CREATING GRID
+            var cell = [];
+            for (let i=0; i<gridTotalCells; i++){
+                cell.push( new cellObj(i, i, i));
+            }
+        },50);
     }
 }
  
@@ -96,5 +127,5 @@ function cellObj (cellIdValue, cellPosXValue, cellPosYValue) {
     }
  
     //INTERVALLO UPDATE TESTINT
-    setInterval(function(){ self.updateTestInt();}, (Math.random()*600));
-}
+    setInterval(function(){ self.updateTestInt();}, ((Math.random()*600)+200));
+             }
