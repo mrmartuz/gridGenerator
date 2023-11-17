@@ -9,7 +9,8 @@ body {
 ul {
     height: 50px;
     background-color: #221f1f;
-    font-family: fantasy;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
     color: #b0926a;
     border-radius: 4px;
     align-self: center;
@@ -32,7 +33,6 @@ ul {
     width: 64px;
     height: 64px;
     background-color: #e1c78f;
-    font-size: xx-small;
 }
  
 .grid-item :hover {
