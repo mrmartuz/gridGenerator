@@ -18,9 +18,9 @@
 alert("THIS GAME HELP YOU IMPROVE YOUR STRESS MANAGING SKILL. USE WITH CAUTIONS. Press ALL the squares to complete the grid and Advance to the next level");
 var timerValue = 0;
 var gridLength = 2;
-$(".levelCounter").innerText("Level: " + (gridLength - 1));
+$(".levelCounter").html("Level: " + (gridLength - 1));
 var gridTotalCells = gridLength * gridLength;
-$(".cellsCounter").innerText("Total Cells: " + gridTotalCells);
+$(".cellsCounter").html("Total Cells: " + gridTotalCells);
 
 var windowWidth = ($(window).width()/2);
 console.log("window width " + windowWidth);
@@ -111,10 +111,10 @@ function updateScore() {
             });
 
         
-            $(".levelCounter").innerText("Level: " + (gridLength - 1));
+            $(".levelCounter").html("Level: " + (gridLength - 1));
 
         
-            $(".cellsCounter").innerText("Total Cells: " + gridTotalCells);
+            $(".cellsCounter").html("Total Cells: " + gridTotalCells);
 
         },50);
     }
