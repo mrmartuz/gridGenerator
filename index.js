@@ -15,7 +15,7 @@
 //INFINITE LEVEL
 
 
-alert("Press ALL the squares to complete the grid and Advance to the next level");
+alert("THIS GAME HELP YOU IMPROVE YOUR STRESS MANAGING SKILL. USE WITH CAUTIONS. Press ALL the squares to complete the grid and Advance to the next level");
 var timerValue = 0;
 var gridLength = 2;
 var gridTotalCells = gridLength * gridLength;
@@ -104,7 +104,7 @@ function updateScore() {
             //EVENT LISTENER
             $(".grid-item").on("click", function() {
                 $(this).toggleClass("grid-item-active");
-                timerValue += 10;
+                timerValue += 50;
             });
 
         },50);
