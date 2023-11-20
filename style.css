@@ -42,3 +42,10 @@ ul {
 .grid-item-active {
     background-color: #ff9100;
 }
+
+/* MOBILE FONT */
+@media screen and (max-width:640px){
+    ul {
+        font-size: 18px;
+    }
+}
